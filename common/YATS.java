@@ -11,6 +11,7 @@ import YATS.util.ConfigHandler;
 import YATS.util.GuiHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
+import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
@@ -27,7 +28,7 @@ clientPacketHandlerSpec = @NetworkMod.SidedPacketHandler(channels="YATS",packetH
 serverPacketHandlerSpec = @NetworkMod.SidedPacketHandler(channels="YATS",packetHandler = ServerPacketHandler.class))
 public class YATS
 {
-	@Mod.Instance
+	@Instance(value="lazdude_yats")
 	public static YATS instance;
 
 	@SidedProxy(clientSide = "YATS.client.ClientProxy",serverSide="YATS.common.CommonProxy")
